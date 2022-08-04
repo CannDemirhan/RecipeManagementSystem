@@ -43,6 +43,9 @@ public class Recipe {
 	@OneToMany(mappedBy = "recipe",cascade = CascadeType.ALL)
 	private Set<RecipeIngredient> recipeIngredientSet;
 	
+	@OneToMany(mappedBy = "recipe")
+	private Set<RecipeRating> recipeRatingSet;
+	
 	
 	
 	@ManyToOne
@@ -60,6 +63,7 @@ public class Recipe {
 		
 		this.steps = new HashSet<>();
 		this.recipeIngredientSet = new HashSet<>();
+		this.recipeRatingSet = new HashSet<>();
 	}
 	
 	public void addStepSet(Step step)
@@ -69,5 +73,9 @@ public class Recipe {
 	public void addRecipeIngredientSet(RecipeIngredient RecipeIngredient)
 	{
 		this.recipeIngredientSet.add(RecipeIngredient);
+	}
+	public void addRecipeRatingSet(RecipeRating recipeRating)
+	{
+		this.recipeRatingSet.add(recipeRating);
 	}
 }

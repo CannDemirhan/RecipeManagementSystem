@@ -7,6 +7,7 @@ import com.candemirhan.recipeapp.server.dbo.Allergen;
 import com.candemirhan.recipeapp.server.dbo.Ingredient;
 import com.candemirhan.recipeapp.server.dbo.Recipe;
 import com.candemirhan.recipeapp.server.dbo.RecipeIngredient;
+import com.candemirhan.recipeapp.server.dbo.RecipeRating;
 import com.candemirhan.recipeapp.server.dbo.RecipeTag;
 import com.candemirhan.recipeapp.server.dbo.RecipeType;
 import com.candemirhan.recipeapp.server.dbo.Role;
@@ -41,6 +42,7 @@ private static final SessionFactory sessionFactory = sessionFactory();
 		config.addAnnotatedClass(UserRole.class);
 		config.addAnnotatedClass(Tag.class);
 		config.addAnnotatedClass(RecipeTag.class);
+		config.addAnnotatedClass(RecipeRating.class);
 		
 		factory = config.configure("hibernate.cfg.xml").buildSessionFactory();
 		

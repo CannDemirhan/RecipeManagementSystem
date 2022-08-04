@@ -14,18 +14,18 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "recipes_tags")
-public class RecipeTag {
+@Table(name = "recipe_ratings")
+public class RecipeRating {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long oid;
-	
+
 	@ManyToOne @Setter
 	@JoinColumn(name = "user_id")
 	private User user;
 	
 	@ManyToOne @Setter
-	@JoinColumn(name = "tag_id")
-	private Tag tag;
+	@JoinColumn(name = "recipe_id")
+	private Recipe recipe;
 }

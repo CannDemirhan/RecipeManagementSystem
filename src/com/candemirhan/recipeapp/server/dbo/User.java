@@ -44,6 +44,9 @@ public class User {
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private Set<RecipeTag> recipeTagSet;
+	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private Set<RecipeRating> recipeRatingSet;
 
 	public User(String firstName, String lastName)
 	{
@@ -56,6 +59,7 @@ public class User {
 		
 		this.userRoleSet = new HashSet<>();
 		this.recipeTagSet = new HashSet<>();
+		this.recipeRatingSet = new HashSet<>();
 	}
 	
 	public void addUserRoleSet(UserRole userRole)
@@ -65,5 +69,9 @@ public class User {
 	public void addRecipeTagSet(RecipeTag recipeTag)
 	{
 		this.recipeTagSet.add(recipeTag);
+	}
+	public void addRecipeRatingSet(RecipeRating recipeRating)
+	{
+		this.recipeRatingSet.add(recipeRating);
 	}
 }

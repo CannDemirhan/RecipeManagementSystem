@@ -4,6 +4,7 @@ import com.candemirhan.recipeapp.server.controller.AllergenController;
 import com.candemirhan.recipeapp.server.controller.IngredientController;
 import com.candemirhan.recipeapp.server.controller.RecipeController;
 import com.candemirhan.recipeapp.server.controller.RecipeIngredientController;
+import com.candemirhan.recipeapp.server.controller.RecipeRatingController;
 import com.candemirhan.recipeapp.server.controller.RecipeTagController;
 import com.candemirhan.recipeapp.server.controller.RecipeTypeController;
 import com.candemirhan.recipeapp.server.controller.RoleController;
@@ -16,6 +17,7 @@ import com.candemirhan.recipeapp.server.dbo.Allergen;
 import com.candemirhan.recipeapp.server.dbo.Ingredient;
 import com.candemirhan.recipeapp.server.dbo.Recipe;
 import com.candemirhan.recipeapp.server.dbo.RecipeIngredient;
+import com.candemirhan.recipeapp.server.dbo.RecipeRating;
 import com.candemirhan.recipeapp.server.dbo.RecipeTag;
 import com.candemirhan.recipeapp.server.dbo.RecipeType;
 import com.candemirhan.recipeapp.server.dbo.Role;
@@ -41,6 +43,7 @@ public class InitiazeData {
 		UserRoleController         userRoleController         = new UserRoleController();
 		TagController              tagController              = new TagController();
 		RecipeTagController        recipeTagController        = new RecipeTagController();
+		RecipeRatingController     recipeRatingController     = new RecipeRatingController();
 		
 		Allergen allergen1 = new Allergen("Süt");
 		Allergen allergen2 = new Allergen("Yumurta");
@@ -157,6 +160,11 @@ public class InitiazeData {
 		UserRole userRole17 = new UserRole();
 		UserRole userRole18 = new UserRole();
 		
+		RecipeRating recipeRating1 = new RecipeRating();
+		RecipeRating recipeRating2 = new RecipeRating();
+		RecipeRating recipeRating3 = new RecipeRating();
+		RecipeRating recipeRating4 = new RecipeRating();
+		
 		// User Role
 		
 		user3.addRecipeTagSet(recipeTag1);
@@ -197,6 +205,16 @@ public class InitiazeData {
 		user14.addUserRoleSet(userRole16);
 		user14.addUserRoleSet(userRole17);
 		user14.addUserRoleSet(userRole18);
+		
+		user1.addRecipeRatingSet(recipeRating1);
+		user2.addRecipeRatingSet(recipeRating2);
+		user5.addRecipeRatingSet(recipeRating3);
+		user12.addRecipeRatingSet(recipeRating4);
+		
+		recipe1.addRecipeRatingSet(recipeRating1);
+		recipe1.addRecipeRatingSet(recipeRating2);
+		recipe1.addRecipeRatingSet(recipeRating3);
+		recipe1.addRecipeRatingSet(recipeRating4);
 		
 		role1.addUserRoleSet(userRole1);
 		role1.addUserRoleSet(userRole16);
@@ -253,6 +271,18 @@ public class InitiazeData {
 		userRole17.setRole(role2);
 		userRole18.setUser(user14);
 		userRole18.setRole(role3);
+		
+		// Recipe Rating
+		
+		recipeRating1.setUser(user1);
+		recipeRating1.setRecipe(recipe1);
+		recipeRating2.setUser(user2);
+		recipeRating2.setRecipe(recipe1);
+		recipeRating3.setUser(user5);
+		recipeRating3.setRecipe(recipe1);
+		recipeRating4.setUser(user12);
+		recipeRating4.setRecipe(recipe1);
+		
 		
 		// User Tag
 		
@@ -436,5 +466,10 @@ public class InitiazeData {
 		recipeTagController.create(recipeTag2);
 		recipeTagController.create(recipeTag3);
 		recipeTagController.create(recipeTag4);
+		
+		recipeRatingController.create(recipeRating1);
+		recipeRatingController.create(recipeRating2);
+		recipeRatingController.create(recipeRating3);
+		recipeRatingController.create(recipeRating4);
 	}
 }
