@@ -46,6 +46,9 @@ public class Recipe {
 	@OneToMany(mappedBy = "recipe")
 	private Set<RecipeRating> recipeRatingSet;
 	
+	@OneToMany(mappedBy = "recipe")
+	private Set<RecipeLog> recipeLogSet;
+	
 	
 	
 	@ManyToOne
@@ -53,17 +56,18 @@ public class Recipe {
 	@Setter
 	private RecipeType recipeType;
 	
-	public Recipe(String name, String description, int servings, int caloriesPerServing, boolean isApproved)
+	public Recipe(String name, String description, int servings, int caloriesPerServing)
 	{
 		this.name = name;
 		this.description = description;
 		this.servings = servings;
 		this.caloriesPerServing = caloriesPerServing;
-		this.isApproved = isApproved;
+		this.isApproved = false;
 		
 		this.steps = new HashSet<>();
 		this.recipeIngredientSet = new HashSet<>();
 		this.recipeRatingSet = new HashSet<>();
+		this.recipeLogSet = new HashSet<>();
 	}
 	
 	public void addStepSet(Step step)

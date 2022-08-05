@@ -39,7 +39,7 @@ public class User {
 	@Column(precision = 1)
 	private double rating;
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL) @Getter
 	private Set<UserRole> userRoleSet;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)

@@ -85,8 +85,8 @@ public class InitiazeData {
 		Step step3 = new Step(3, "Bulguru Kavur", 10, "Dakika");
 		Step step4 = new Step(4, "Pişir", 30, "Dakika");
 		
-		Recipe recipe1 = new Recipe("Bulgur Pilavı", "Soğanlı Bulgur Pilavı", 4, 150, true);
-		Recipe recipe2 = new Recipe("Pirinç Pilavı", "Şehriyeli Pirin. Pilavı", 4, 165, true);
+		Recipe recipe1 = new Recipe("Bulgur Pilavı", "Soğanlı Bulgur Pilavı", 4, 150);
+		Recipe recipe2 = new Recipe("Pirinç Pilavı", "Şehriyeli Pirin. Pilavı", 4, 165);
 		
 		RecipeType rtype1 = new RecipeType("Vegan");
 		RecipeType rtype2 = new RecipeType("Vejeteryan");
